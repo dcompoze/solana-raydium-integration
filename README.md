@@ -61,12 +61,13 @@ pub fn get_amm_config_by_index(&self, index: u16) -> Result<(Pubkey, AmmConfig)>
 pub fn get_pool_liquidity(&self, pool_state: Pubkey) -> Result<PoolLiquidity> {...}
 ```
 
-
 # Program output
 
 Example program output when initializing the pool for the first time:
 
 ```
+[INFO] AMM config 9zSzfkYy6awexsHvmggeH36pfVUdDGyCcwmjT3AQPBj6: index=0, trade_fee_rate=2500, protocol_fee_rate=120000
+[INFO] Using AMM config with index: 0
 [INFO] Initializing pool with tokens 2vEyg5rDJZmSjsTKKGKVtETu2DSGyKwcs8h3kycLyziU (10000000) and 69iigTreHjCuinTmPvbaVdKtvwVwkWp5nd8ERNqg49ho (10000000)
 [32/32] Finalizing transaction 5HqDhpdAtMxFJ2pzE8HZ5VeNphZLN61VbyjkHjTr5epLhtBgYW3JnQN1uzmQqW39eSXPigZ2zGUx6KyR7ewJJHmU
 [INFO] Initialization complete: Some(5HqDhpdAtMxFJ2pzE8HZ5VeNphZLN61VbyjkHjTr5epLhtBgYW3JnQN1uzmQqW39eSXPigZ2zGUx6KyR7ewJJHmU), token_0_vault=Fzh82ayt5anmjQvh7bm3MhgaiNZ4sui1jvYxLacFjMtE, token_1_vault=BBQ1zfuuBzgPkwT9gH3NjZvVUJfUFKYayNczm6puLzyj, pool_state=85cCgxAV8r3RYZKUWaFqrson2J4KLign9THRXbfEfq7G, pool_authority=7rQ1QFNosMkUCuh7Z7fPbTHvh73b68sQYdirycEzJVuw, lp_mint=Gv5QBxrkP2bUvUVfP4Gv3uTbG9j3AJkmGMB4zZ5F2BVB, creator_token_0=77JDsk2LWGFufEgqXeZBg1AvX1LkyCFaGPGWwNwFDviq, creator_token_1=3YbHpJ4JTDQ17dyJ843acLbHnzWRdMSNMz45PSXuhiJS, creator_lp_ata=VCiKWZvhAx5S56fBrHT2qxiZaFXNeQUdHCJ4q4x9bkv
@@ -134,7 +135,7 @@ Signature: UNuhyUAwxHLXdvk821aTNRCdKmGQ3BMhsEsX2Po3XAdH9Ywsn72UXHAoRA8k8q3dnTHW7
 
 # Token B
 
-Create SPL TokenA:
+Create SPL TokenB:
 
 ```sh
 spl-token create-token --decimals 6
@@ -147,7 +148,7 @@ Decimals:  6
 Signature: 5meBddTBteEL2bumxzRCztUbK9RkGVmWksZQdT2utEFbBh5DVJtN88LabAACvnbACKCkFZ8PE4GVk5PbvWQY9xqb
 ```
 
-Create TokenA ATA:
+Create TokenB ATA:
 
 ```sh
 spl-token create-account 2vEyg5rDJZmSjsTKKGKVtETu2DSGyKwcs8h3kycLyziU
